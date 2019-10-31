@@ -1,0 +1,30 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: dubbo-demo-provider
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: djy150402
+    url: jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=Asia/Shanghai
+  thymeleaf:
+    cache: false
+  redis:
+    host: 127.0.0.1
+    port: 6379
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: org.cobra.entity
+dubbo:
+  application:
+    name: dubbo-demo-provider
+  protocol:
+    name: dubbo
+    port: 20880
+  registry:
+    protocol: zookeeper
+    address: 127.0.0.1:2181
+
+
